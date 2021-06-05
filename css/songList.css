@@ -1,0 +1,198 @@
+/* 1rem = 20px */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+.wapper {
+  max-width: 600px;
+  min-width: 300px;
+  font-size: 0.75rem;
+}
+.wapper .serach {
+  width: 14rem;
+  height: 1.5rem;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 0.8rem;
+}
+.wapper .serach .back {
+  position: relative;
+  left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+.wapper .serach .back span {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-left: 0.05rem solid black;
+  border-bottom: 0.05rem solid black;
+  transform: rotate(45deg);
+}
+.wapper .serach .serachInput {
+  flex-grow: 1;
+}
+.wapper .serach .serachInput input {
+  width: 100%;
+  background-color: #f7f7f7;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+.wapper .list {
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  width: 14.5rem;
+  height: 100%;
+  background-color: white;
+}
+.wapper .list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wapper .list .song {
+  display: flex;
+  width: 100%;
+  height: 3.2rem;
+}
+.wapper .list .song .songBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+}
+.wapper .list .song .songBox .songName {
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+.wapper .list .song .songBox .songMessage {
+  font-size: 0.5rem;
+  display: flex;
+  width: 100%;
+  margin-left: 0.5rem;
+}
+.wapper .list .song .songBox .songMessage .songer {
+  color: #1f3e53;
+}
+.wapper .list .song .songBox .songMessage .album {
+  color: #b4b3b3;
+}
+.wapper .list .song .menu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 100%;
+  float: right;
+}
+.wapper .list .song .menu span {
+  display: block;
+  width: 0.15rem;
+  height: 0.15rem;
+  margin: 0.05rem;
+  background-color: #8a8a8a;
+  border-radius: 50%;
+}
+.wapper .list .space {
+  background-color: white;
+}
+.wapper .list .line {
+  width: 13.5rem;
+  height: 0.05rem;
+  margin: 0 auto;
+  border-bottom: 0.05rem solid #cec8c8;
+}
+.wapper .minAudio .minAudioBox {
+  width: 100%;
+  height: 2.45rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  animation: minAudio 0.5s ease-out;
+}
+@keyframes minAudio {
+  from {
+    bottom: -2.45rem;
+  }
+  to {
+    bottom: 0;
+  }
+}
+.wapper .minAudio .minAudioBox .minSongMes {
+  display: flex;
+  width: 11rem;
+  height: 100%;
+}
+.wapper .minAudio .minAudioBox .minSongMes .minImg {
+  flex-basis: 1.8rem;
+  height: 1.8rem;
+}
+.wapper .minAudio .minAudioBox .minSongMes .minImg img {
+  margin-left: 0.2rem;
+  border: 0.3rem solid black;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.wapper .minAudio .minAudioBox .minSongMes .minSong {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wapper .minAudio .minAudioBox .play {
+  display: flex;
+  margin: auto;
+}
+.wapper .minAudio .minAudioBox .play span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.05rem solid;
+  border-radius: 50%;
+}
+.wapper .minAudio .minAudioBox .play span .playingBtn {
+  width: 0.2rem;
+  height: 0.8rem;
+  border-left: 0.2rem solid black;
+  border-right: 0.2rem solid black;
+}
+.wapper .minAudio .minAudioBox .play span .pausingBtn {
+  margin-left: 0.2rem;
+  border-right: 0.4rem solid transparent;
+  border-left: 0.4rem solid transparent;
+  border-bottom: 0.6rem solid black;
+  transform: rotate(90deg);
+}
+.wapper .minAudio .minAudioBox .progressBar {
+  display: none;
+  height: 0.1rem;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  animation: progress 5s linear;
+}
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

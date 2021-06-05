@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/sentingicon.png">
+    <link rel="stylesheet" href="./css/songList.css">
+    <script src="./lib/node_modules/jquery/dist/jquery.js"></script>
+    <script src="./lib/node_modules/vue/dist/vue.js"></script>
+    <title>森听音乐</title>
+</head>
+
+<body>
+    <script src="./js/fontSize.js"></script>
+    <div class="wapper">
+        <!-- 搜索框 -->
+        <div class="serach">
+            <div class="back">
+                <span></span>
+            </div>
+            <div class="serachInput">
+                <input :placeholder="placeholder" @keyup.enter="serach" v-model='serachContent' type="text">
+            </div>
+        </div>
+        <!-- 歌曲列表 -->
+        <div class="list">
+            <ul>
+                <li v-for='song in songs' @click='playMusic(song.id)'>
+                    <div class="song">
+                        <div class="songBox">
+                            <div class="songName">
+                                <p>{{song.name}}</p>
+                            </div>
+                            <div class="songMessage">
+                                <p class="songer">{{song.artists[0].name}}</p>
+                                <p class="album">&nbsp; {{song.album.name}}</p>
+                            </div>
+                        </div>
+
+                        <div class="menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- 分割线 -->
+                    <div class="line"></div>
+                </li>
+                <div class="space"></div>
+            </ul>
+        </div>
+        <div class="minAudio" v-show='minAudioIsShow'>
+            <div class="minAudioBox">
+                <div class="minSongMes">
+                    <div class="minImg">
+                        <img :src="minImgSrc" alt="">
+                    </div>
+                    <div class="minSong">
+                        <p class="p1" style="font-size: 0.9rem !important;">{{minSong}}</p>
+                        <p class="p2" style="font-size: 0.5rem;">&nbsp; - &nbsp;{{minSonger}}</p>
+                    </div>
+                </div>
+                <div class="play" @click='minPlayOrPause'>
+                    <span>
+                        <!-- 播放按钮 -->
+                        <div class="playingBtn" v-show='playingBtn'></div>
+                        <!-- 暂停按钮 -->
+                        <div class="pausingBtn" v-show='pausingBtn'></div>
+                    </span>
+                    <audio class="myAudio" :src="audioUrl" :autoplay="play">
+                        该浏览器不支持播放
+                    </audio>
+                </div>
+                <!-- 进度条1.0, 直线进度条 -->
+                <div class="progressBar">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/songList.js"></script>
+</body>
+
+</html>
